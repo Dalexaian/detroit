@@ -1,0 +1,94 @@
+/* Modyfikowanie paragrafów */
+p {
+    color:red;font-size: 30px;
+}
+
+/* Modyfikowanie linków */
+a:link {
+    color:gray;
+    text-decoration: none;
+} /* Jak wygląda przed interackją (decoration none = brak podkreślenia) */
+a:visited {
+    color:navy;
+    text-decoration: none;
+} /* Jak wygląda po odwiedzeniu */
+a:hover {
+    color:orange;
+    background-color: green;
+} /* Jak wygląda przy najechaniu */
+a:active {
+    color: olive;
+} /* Jak wygląda gdy jest aktywny */
+div.menu_linki a:link, div.menu_linki a:visited {
+    color: gray;
+    text-decoration: none;
+} /* Można je grupować i łączyć przecinkami "," */
+div.test {
+    text-decoration: inherit;
+    text-transform: capitalize;
+    text-align: justify;
+    line-height: 140%;
+    text-indent: 20px;
+    word-spacing: 2em;
+    letter-spacing: 0.2em;
+    white-space: pre;
+} /* 
+TD - dekorowanie tekstu (podkreśleniami, przekreśleniami, nadkreśleniami...)
+TT - zmiana tekstu (kapitalizacja pierwszych liter, małe litery, wszystkie duże litery)
+TA - formatowanie tekstu (do prawej, do lewej, na środku, wyjustowane)
+LH - odstęp między wierszami z odziedziczonej wieklkości liter (16px, 140%...)
+TI - wcięcie tekstu
+WS - odległość między słowami (1em = 1xpx)
+LS - odległość między literami
+WhSp - białe odstępy (nowrap - bez zawijania tekstu przy małych ekranach aka. entery na końcu linijki)
+(pre; - preformated interpretuje każdą spacje, enter itp. tekstu oryginalnego) */
+div.przyklad {
+    font-size: 20px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-variant: small-caps; 
+    border-top-style: solid;
+    border-width: thick;
+    border-bottom-color: blue;
+} /*
+F-Size - rozmiar czcionki (px, %, em, in, cm, mm...)
+F-F - zestaw czcionek
+F-Style - np. kursywa zaplanowana dla odpowieniej czcionki (oblique - pochyl bezwarunkowo)
+F-W - pogrubianie w wartości liczbowej (zamiast "bold" numery od 100-900)
+F-V - capslock z traktowaniem liter dużych i małych (fajne na nagłówki)
+Border - obramowanie tekstu i jego styl (1wart 2wart 3wart 4wart - góra, prawa, dół, lewa) */
+body {
+    background-color: black;
+    background-image: url('zdjecie_obok.png');
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-attachment: fixed;
+} /*
+BC - kolor tła
+BI - zdjęcie w tle (link do zdjęcia)
+BR - zdjęcie powtarzalne
+BP - pozycjonowanie na ekranie (od lewej, od góry)
+BA - zdjęcie ruchome czy stałe podczas przesówania strony */
+table.test {
+    width: 500px;
+    height: 500px;
+    border: 4px dotted green;
+    border-collapse: collapse; /* załamanie wnętrza tabelki */
+    padding: 10%; /* wypełnienie od krawędzi */
+    vertical-align: top;
+}
+ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    list-style-image: url('ol_image.gif');
+}
+ol {
+    list-style-type: decimal;
+} /*
+LST - wygląd punktu (disc, square, circle, decimal...)
+LSP - umiejscowienie względem tekstu
+LSI - punkt jako zdjęcie */
+.help {
+    cursor: pointer; /* zmiana kusora po najechaniu na tag .help */
+}

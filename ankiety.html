@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="pl" />
+	<meta name="author" content="Lord Patryk" />
+	<meta name="robots" content="index, follow" />
+	<title>Szablony ankiet</title>
+	<meta name="description" content="Testuje sobie bajery" />
+    <meta name="keywords" content="testing, test" />
+    <style type=text.css>
+        /* Adnotacje nieinterpretowane */
+    </style>
+	<link rel="stylesheets" type="tekst/css" href="test.css">
+</head>
+<body>
+		<!-- Pola do wpiswania tekstu wraz z wyszczególnieniem zestawu liter które może przyjmować.
+		Akcja i forma przekazu odpowiedzi. input type "text" - zwykły tekst, type "password" - tekst ukryty -->
+	<form action="mailto:adres@mail.com?subject=Ankieta" method="post" enctype="text/plain" accept-charset="utf-8">
+		Imię: <input type="text" name="imie" size="10" maxlength="10" /><br />
+        Hasło: <input type="password" name="haslo" /><br />
+		<p>To jest taka krótka ankieta:</p>
+		<!-- Boxy do zaznaczania wyboru wielokrotnego. Label - opis dla odbiorcy -->
+		<fieldset>
+				<legend>Jakie jest Twoje hobby?</legend>
+			<input type="checkbox" name="hobby" value="plywanie" id="1" /> <label for="1">Pływanie</label> 
+			<input type="checkbox" name="hobby" value="gry_komputerowe" id="2" /> <label for="2">Gry komputerowe </label> 
+			<input type="checkbox" name="hobby" value="programowanie" id="3" /> <label for="3">Programowanie </label>
+		</fieldset>
+		<!-- Boxy do zaznaczania wyboru jednokrotnego. Label - opis dla odbiorcy -->
+		<br />
+		<fieldset>
+			<legend>Do jakiej kategori wiekowej należysz?</legend>
+				<input type="radio" name="kategoria_wiekowa" value="1-18" id="4" /><label for="4">1-18</label>
+				<input type="radio" name="kategoria_wiekowa" value="18-34" id="5" /><label for="5">18-34</label>
+				<input type="radio" name="kategoria_wiekowa" value="34+" id="6" /><label for="6">34+</label>
+		</fieldset>
+		<br />
+		<!-- Ramka do wypełnienia. Disabled - bez możliwości edycji -->
+        <p>A teraz jakiś bullshit:</p>
+		<textarea cols="20" rows="10" disabled="disabled">
+			To jest treść nie do zmienienia
+		</textarea>
+		<br />
+		<!-- Otwarty dropbox z możliwością "multiple" - wyboru wielokrotnego -->
+		<select name="kolory" multiple="multiple">
+			<option value="Zolty">Żółty </option>
+			<option value="Zielony">Zielony </option>
+			<option value="Czerwony">Czerwony </option>
+		</select>
+		<br />
+		<!-- Przycisk do przesyłania pliku z dysku -->
+		<input type="file" name="plik" />
+		<br />
+		<!-- Hidden - ukryta wartość widoczna jedynie z poziomu back-end dev. -->
+		<input type="hidden" name="data" value="27.11.2009" />
+		<br />
+		<!-- Przycisk również można edytować w sposób jaki edytujemy zwykły tekst -->
+		<button type="submit">
+			<table>
+				<tr><td>1</td><td>2</td></tr>
+				<tr><td>3</td><td>4</td></tr>
+			</table>
+		</button>
+		<br />
+		<input type="submit" value="Wyślij" /> <!-- enctype="multipart/form-data"-->
+		<br />
+	</form>
+</body>
+</html>
